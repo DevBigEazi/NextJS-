@@ -1,7 +1,15 @@
 import "./globals.css";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Homepage",
+  icons: {
+    icon: "/icon.png",
+  },
+};
 
 export default function RootLayout({
   children,
@@ -10,14 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-      </head>
-      <body className={inter.className}>
-        <nav>Navbar</nav>
-        {children}
-        <footer>Footer</footer>
-      </body>
+      <body className={`${inter.className} p-5 bg-slate-100`}>{children}</body>
     </html>
   );
 }
