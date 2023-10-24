@@ -19,7 +19,7 @@ export default async function UsersPage() {
         </h2>
         <br />
         {users.map((user) => (
-          <div>
+          <div key={user.id}>
             <h3>
               <Link href={`/users/${user.id}`}>{user.name}</Link>
             </h3>
